@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Μαριάννα, αγάπη μου – Θα είμαστε πάντα μαζί;</title>
+  <style>
+    body { margin:0; padding:0; background:#fff5f8; font-family:'Segoe UI',sans-serif; text-align:center; }
+    h1 { font-size:2.5rem; color:#e91e63; margin-top:2rem; }
+    h2 { font-size:2rem; color:#333; margin:1rem 0; }
+    .buttons { display:flex; justify-content:center; gap:1.5rem; margin-top:1rem; }
+    button {
+      padding:1rem 2rem; font-size:1.5rem;
+      border:none; border-radius:8px; cursor:pointer;
+      transition:all .3s ease;
+    }
+    .yes { background:#e91e63; color:#fff; }
+    .yes:hover { transform:scale(1.05); }
+    .no { background:#ccc; color:#555; position:relative; }
+    .no:hover { transform:translateX(80px) rotate(5deg); }
+    .message {
+      display:none; font-size:1.8rem; color:#e91e63; margin-top:2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Μαριάννα, αγάπη μου</h1>
+  <h2>Θα είμαστε πάντα μαζί;</h2>
+  <div class="buttons">
+    <button class="yes" onclick="showMessage()">Ναι 💖</button>
+    <button class="no">Όχι 😅</button>
+  </div>
+  <div class="message" id="message">
+    Το ήξερα! Για πάντα μαζί, Μαριάννα μου 💍❤️
+  </div>
+
+  <script>
+    function showMessage(){
+      document.getElementById('message').style.display = 'block';
+    }
+    const noBtn = document.querySelector('.no');
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
